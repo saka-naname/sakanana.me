@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { NotoSansJP } from "@/styles/font";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { css } from "../../styled-system/css";
 
 export const metadata: Metadata = {
   title: "sakanana.me",
@@ -15,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
-      <body className={inter.className}>{children}</body>
+    <html lang="ja" className={`${NotoSansJP.variable}`}>
+      <body className={css({ fontFamily: "noto" })}>{children}</body>
     </html>
   );
 }

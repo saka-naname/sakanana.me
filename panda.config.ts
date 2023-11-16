@@ -5,14 +5,25 @@ export default defineConfig({
   preflight: true,
 
   // Where to look for your css declarations
-  include: ["./src/components/**/*.{ts,tsx,js,jsx}", "./src/app/**/*.{ts,tsx,js,jsx}"],
+  include: [
+    "./src/components/**/*.{ts,tsx,js,jsx}",
+    "./src/app/**/*.{ts,tsx,js,jsx}",
+  ],
 
   // Files to exclude
   exclude: [],
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      tokens: {
+        fonts: {
+          noto: {
+            value: "var(--font-noto-sans-jp), var(--font-fallback)",
+          },
+        },
+      },
+    },
   },
 
   // Enable jsx framework
