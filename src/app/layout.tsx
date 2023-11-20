@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NotoSansJP } from "@/styles/font";
 import "./globals.css";
 import { css } from "../../styled-system/css";
+import NavBar from "./components/ui/navbar";
 
 export const metadata: Metadata = {
   title: "sakanana.me",
@@ -15,7 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" className={`${NotoSansJP.variable}`}>
-      <body className={css({ fontFamily: "noto" })}>{children}</body>
+      <body className={css({ fontFamily: "noto" })}>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }
