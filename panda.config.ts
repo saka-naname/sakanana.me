@@ -81,37 +81,19 @@ export default defineConfig({
           },
         },
         rotateIn: {
-          "0%": {
-            visibility: "hidden",
-            transform: "rotateX(0.5turn)",
-          },
           "50%": {
-            visibility: "hidden",
-            transform: "rotateX(0.25turn)",
-          },
-          "50.01%": {
             visibility: "visible",
           },
           "100%": {
             visibility: "visible",
-            transform: "rotateX(0turn)",
           },
         },
         rotateOut: {
-          "0%": {
-            visibility: "visible",
-            transform: "rotateX(0turn)",
-          },
           "50%": {
-            visibility: "visible",
-            transform: "rotateX(0.25turn)",
-          },
-          "50.01%": {
             visibility: "hidden",
           },
           "100%": {
             visibility: "hidden",
-            transform: "rotateX(0.5turn)",
           },
         },
       },
