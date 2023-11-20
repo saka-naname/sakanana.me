@@ -52,6 +52,34 @@ export default defineConfig({
             opacity: "0",
           },
         },
+        slideIn: {
+          "0%": {
+            display: "none",
+            transform: "translateY(-100%)",
+          },
+          "0.01%": {
+            display: "block",
+            transform: "translateY(-100%)",
+          },
+          "100%": {
+            display: "block",
+            transform: "translateY(0%)",
+          },
+        },
+        slideOut: {
+          "0%": {
+            display: "block",
+            transform: "translateY(0%)",
+          },
+          "99.9%": {
+            display: "block",
+            transform: "translateY(-100%)",
+          },
+          "100%": {
+            display: "none",
+            transform: "translateY(-100%)",
+          },
+        },
       },
     },
   },
