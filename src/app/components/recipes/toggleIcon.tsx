@@ -16,6 +16,7 @@ export const toggleIcon = sva({
       transform: "translate(-50%, -50%) rotateX(0.5turn)",
       transition: "transform .2s",
       animation: "rotateOut 0.2s linear 0s forwards",
+      cursor: "pointer",
     },
     iconUnchecked: {
       position: "absolute",
@@ -23,6 +24,7 @@ export const toggleIcon = sva({
       transform: "translate(-50%, -50%) rotateX(0turn)",
       transition: "transform .2s",
       animation: "rotateIn 0.2s linear 0s forwards",
+      cursor: "pointer",
     },
   },
   variants: {
