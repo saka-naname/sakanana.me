@@ -1,6 +1,7 @@
 import { css } from "@/../styled-system/css";
 import Link from "next/link";
 import { flex, hstack, container } from "@/../styled-system/patterns";
+import NavButton from "./navButton";
 
 const navLink = css({
   color: {
@@ -8,18 +9,20 @@ const navLink = css({
     _hover: "#F2E8C9",
   },
   transition: "color 0.15s",
+  p: "2",
 });
 
 export default function NavBar() {
   return (
     <div
       className={css({
-        position: "sticky",
+        position: "fixed",
         top: "0",
         left: "0",
+        zIndex: "65535",
         width: "full",
         bgColor: "#595246",
-        p: "4",
+        p: "2",
         fontWeight: "bold",
       })}
     >
@@ -35,6 +38,14 @@ export default function NavBar() {
             <Link href="#" className={navLink}>
               Blog
             </Link>
+          </div>
+          <div
+            className={css({
+              hideFrom: "md",
+              color: "#ffffff",
+            })}
+          >
+            <NavButton />
           </div>
         </div>
       </div>

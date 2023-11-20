@@ -23,6 +23,36 @@ export default defineConfig({
           },
         },
       },
+      keyframes: {
+        fadeIn: {
+          "0%": {
+            display: "none",
+            opacity: "0",
+          },
+          "0.01%": {
+            display: "block",
+            opacity: "0",
+          },
+          "100%": {
+            display: "block",
+            opacity: "1",
+          },
+        },
+        fadeOut: {
+          "0%": {
+            display: "block",
+            opacity: "1",
+          },
+          "99.9%": {
+            display: "block",
+            opacity: "0",
+          },
+          "100%": {
+            display: "none",
+            opacity: "0",
+          },
+        },
+      },
     },
   },
 
