@@ -12,6 +12,7 @@ const menuBg = cva({
     top: "0",
     transform: "translateY(-100%)",
     animation: "slideOut 0.2s ease-in-out 0s forwards",
+    hideFrom: "md",
   },
   variants: {
     visible: {
@@ -39,18 +40,20 @@ const menuLink = css({
 
 export default function NavMenuContent(props: { visible: boolean }) {
   return (
-    <div
-      className={menuBg({
-        visible: props.visible,
-      })}
-    >
-      <div className={vstack({ gap: "0" })}>
-        <Link href="#" className={menuLink}>
-          Works
-        </Link>
-        <Link href="#" className={menuLink}>
-          Blog
-        </Link>
+    <div className={css({ hideFrom: "md" })}>
+      <div
+        className={menuBg({
+          visible: props.visible,
+        })}
+      >
+        <div className={vstack({ gap: "0" })}>
+          <Link href="#" className={menuLink}>
+            Works
+          </Link>
+          <Link href="#" className={menuLink}>
+            Blog
+          </Link>
+        </div>
       </div>
     </div>
   );
