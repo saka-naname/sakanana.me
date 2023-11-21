@@ -1,5 +1,5 @@
 import { css } from "@/../styled-system/css";
-import { container, wrap, grid } from "@/../styled-system/patterns";
+import { container, grid } from "@/../styled-system/patterns";
 import { card } from "../components/recipes/card";
 import Image from "next/image";
 
