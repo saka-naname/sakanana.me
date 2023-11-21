@@ -23,6 +23,37 @@ export default defineConfig({
           },
         },
       },
+      semanticTokens: {
+        colors: {
+          navBar: {
+            bg: {
+              DEFAULT: {
+                value: "#595246",
+              },
+            },
+            text: {
+              DEFAULT: {
+                value: "#FFFFFF",
+              },
+              hover: {
+                value: "#F2E8C9",
+              },
+            },
+          },
+          navMenu: {
+            bg: {
+              DEFAULT: {
+                value: "#FFF8EE",
+              },
+            },
+            text: {
+              DEFAULT: {
+                value: "#595246",
+              },
+            },
+          },
+        },
+      },
       keyframes: {
         fadeIn: {
           "0%": {

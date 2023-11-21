@@ -4,9 +4,10 @@ import Link from "next/link";
 
 const menuBg = cva({
   base: {
+    colorPalette: "navMenu",
     position: "fixed",
     w: "screen",
-    bgColor: "#FFF8EE",
+    bgColor: "colorPalette.bg",
     display: "none",
     pt: "56px",
     top: "0",
@@ -27,7 +28,8 @@ const menuBg = cva({
 });
 
 const menuLink = css({
-  color: "#595246",
+  colorPalette: "navMenu",
+  color: "colorPalette.text",
   opacity: {
     base: "1",
     _hover: "0.8",
