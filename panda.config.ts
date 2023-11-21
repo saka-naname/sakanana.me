@@ -52,6 +52,22 @@ export default defineConfig({
               },
             },
           },
+          body: {
+            bg: {
+              value: "#FFF8EE",
+            },
+            title: {
+              value: "#595246",
+            },
+          },
+          content: {
+            bg: {
+              value: "#FFFFFF",
+            },
+            text: {
+              value: "#000000",
+            },
+          },
         },
       },
       keyframes: {
