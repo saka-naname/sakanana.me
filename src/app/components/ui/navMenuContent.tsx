@@ -7,6 +7,7 @@ const menuBg = cva({
     colorPalette: "navMenu",
     position: "fixed",
     w: "screen",
+    zIndex: "65534",
     bgColor: "colorPalette.bg",
     display: "none",
     pt: "56px",
