@@ -27,7 +27,7 @@ export const card = sva({
     subContainer: {
       bgColor: "#f8f8f8",
       p: 4,
-      pt: 2.5,
+      pt: "0.675rem",
       overflow: "hidden",
       roundedBottom: "sm",
     },
