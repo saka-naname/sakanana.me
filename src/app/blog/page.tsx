@@ -1,11 +1,8 @@
 import { css } from "@/../styled-system/css";
 import { container, grid } from "@/../styled-system/patterns";
-import { card } from "../components/recipes/card";
-import Image from "next/image";
+import Card from "../components/ui/card";
 
 export default function Home() {
-  const classes = card({});
-
   return (
     <div
       className={css({
@@ -45,34 +42,12 @@ export default function Home() {
             },
           })}
         >
-          <div className={classes.root}>
-            <div className={classes.imageWrapper}>
-              <Image
-                src="/豊洲東雲_f3.png"
-                alt="晴海定期"
-                fill={true}
-                className={classes.image}
-              />
-            </div>
-            <div className={classes.subContainer}>
-              <h1 className={classes.title}>タイトル</h1>
-              <p className={classes.description}>説明文</p>
-            </div>
-          </div>
-          <div className={classes.root}>
-            <div className={classes.imageWrapper}>
-              <Image
-                src="/豊洲東雲_f3.png"
-                alt="晴海定期"
-                fill={true}
-                className={classes.image}
-              />
-            </div>
-            <div className={classes.subContainer}>
-              <h1 className={classes.title}>Title</h1>
-              <p className={classes.description}>Description</p>
-            </div>
-          </div>
+          <Card
+            src="/豊洲東雲_f3.png"
+            alt="サンプル画像"
+            title="前期お絵描き企画"
+            description="前期お絵描き企画で展示した作品です．"
+          />
         </div>
       </div>
     </div>

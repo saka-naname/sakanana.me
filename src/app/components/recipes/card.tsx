@@ -1,4 +1,4 @@
-import { sva } from "@/../styled-system/css";
+import { sva, type RecipeVariantProps } from "@/../styled-system/css";
 
 export const card = sva({
   slots: [
@@ -19,6 +19,8 @@ export const card = sva({
       width: "100%",
       height: "auto",
       aspectRatio: "1.414",
+      roundedTop: "sm",
+      bgColor: "#f0f0f0",
       overflow: "hidden",
     },
     image: {
@@ -59,3 +61,5 @@ export const card = sva({
     size: "md",
   },
 });
+
+export type CardVariants = RecipeVariantProps<typeof card>;
