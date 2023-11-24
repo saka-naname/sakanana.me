@@ -48,6 +48,24 @@ export default function Home() {
             title="前期お絵描き企画"
             description="前期お絵描き企画で展示した作品です．"
           />
+          <Card
+            src="/豊洲東雲_f3.png"
+            alt="サンプル画像"
+            title="前期お絵描き企画"
+            description="前期お絵描き企画で展示した作品です．"
+          />
+          <Card
+            src="/豊洲東雲_f3.png"
+            alt="サンプル画像"
+            title="前期お絵描き企画"
+            description="前期お絵描き企画で展示した作品です．"
+          />
+          <Card
+            src="/豊洲東雲_f3.png"
+            alt="サンプル画像"
+            title="前期お絵描き企画"
+            description="前期お絵描き企画で展示した作品です．"
+          />
         </div>
       </div>
     </div>

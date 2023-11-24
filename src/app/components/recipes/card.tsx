@@ -10,10 +10,6 @@ export const card = sva({
     "description",
   ],
   base: {
-    root: {
-      display: "grid",
-      gridTemplateRows: "5fr 2fr",
-    },
     imageWrapper: {
       position: "relative",
       width: "100%",
@@ -31,6 +27,7 @@ export const card = sva({
     subContainer: {
       bgColor: "#f8f8f8",
       p: 4,
+      pt: "0.65rem",
       overflow: "hidden",
       roundedBottom: "sm",
     },
@@ -44,6 +41,7 @@ export const card = sva({
       overflow: "hidden",
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
+      fontSize: "small",
     },
   },
   variants: {
