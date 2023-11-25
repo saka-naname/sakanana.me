@@ -47,6 +47,7 @@ export default function Home() {
             alt="サンプル画像"
             title="前期お絵描き企画"
             description="前期お絵描き企画で展示した作品です．"
+            href="https://github.com/saka-naname"
           />
           <Card
             src="/豊洲東雲_f3.png"

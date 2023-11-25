@@ -10,6 +10,9 @@ export const card = sva({
     "description",
   ],
   base: {
+    root: {
+      position: "relative",
+    },
     imageWrapper: {
       position: "relative",
       width: "100%",
