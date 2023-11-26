@@ -37,7 +37,7 @@ export default function NavBar() {
             <Link href="#" className={navLink}>
               Works
             </Link>
-            <Link href="#" className={navLink}>
+            <Link href="/blog" className={navLink}>
               Blog
             </Link>
           </div>

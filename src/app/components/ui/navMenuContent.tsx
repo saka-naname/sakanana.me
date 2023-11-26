@@ -53,7 +53,7 @@ export default function NavMenuContent(props: { visible: boolean }) {
           <Link href="#" className={menuLink}>
             Works
           </Link>
-          <Link href="#" className={menuLink}>
+          <Link href="/blog" className={menuLink}>
             Blog
           </Link>
         </div>
