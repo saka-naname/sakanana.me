@@ -8,10 +8,22 @@ export const card = sva({
     "subContainer",
     "title",
     "description",
+    "linkOverlay",
   ],
   base: {
     root: {
       position: "relative",
+      rounded: "sm",
+      lgDown: {
+        "&:has(a)": {
+          outlineStyle: "solid",
+          outlineColor: "transparent",
+          outlineWidth: 4,
+          _active: {
+            outlineColor: "Highlight",
+          },
+        },
+      },
     },
     imageWrapper: {
       position: "relative",
@@ -45,6 +57,9 @@ export const card = sva({
       whiteSpace: "nowrap",
       textOverflow: "ellipsis",
       fontSize: "small",
+    },
+    linkOverlay: {
+      WebkitTapHighlightColor: "transparent",
     },
   },
   variants: {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { card, type CardVariants } from "../recipes/card";
 import { LinkBox } from "@/../styled-system/jsx";
+import { cx } from "@/../styled-system/css";
 import NextLinkOverlay from "./nextLinkOverlay";
 
 type CardProps = CardVariants & {
@@ -13,8 +14,9 @@ type CardProps = CardVariants & {
 
 export default function Card(props: CardProps) {
   const classes = card(props);
+  const rootClassName = cx(classes.root, "group");
   return (
-    <LinkBox className={classes.root}>
+    <LinkBox className={rootClassName}>
       <div className={classes.imageWrapper}>
         {!!props.src && !!props.alt ? (
           <Image
@@ -30,7 +32,11 @@ export default function Card(props: CardProps) {
       <div className={classes.subContainer}>
         {props.href ? (
           <h1 className={classes.title}>
-            <NextLinkOverlay href={props.href} title={props.title}>
+            <NextLinkOverlay
+              className={classes.linkOverlay}
+              href={props.href}
+              title={props.title}
+            >
               {props.title}
             </NextLinkOverlay>
           </h1>
