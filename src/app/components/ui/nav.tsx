@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import NavBar from "./navbar";
 import React from "react";
 import NavMenu from "./navMenu";
@@ -16,7 +16,6 @@ export const NavContext = React.createContext({} as TNavContext);
 const NavProvider = (props: { children: React.ReactNode }) => {
   const [isOpened, setOpened] = useState(false);
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     const escapeKeyHandler = (e: KeyboardEvent) => {
@@ -34,7 +33,7 @@ const NavProvider = (props: { children: React.ReactNode }) => {
 
   useEffect(() => {
     setOpened(false);
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <NavContext.Provider value={{ isOpened, setOpened }}>
