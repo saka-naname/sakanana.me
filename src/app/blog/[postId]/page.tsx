@@ -80,18 +80,23 @@ export default async function StaticBlogPage({
         py: "6",
       })}
     >
-      <h1
-        className={css({
-          colorPalette: "body",
-          textAlign: "center",
-          fontSize: "4xl",
-          fontWeight: "bold",
-          color: "colorPalette.title",
-          mb: "4",
-        })}
-      >
-        {post.title}
-      </h1>
+      <div className={container({ mb: 4 })}>
+        <h1
+          className={css({
+            colorPalette: "body",
+            textAlign: "center",
+            fontSize: {
+              base: "4xl",
+              lgDown: "2xl",
+            },
+            fontWeight: "bold",
+            color: "colorPalette.title",
+          })}
+        >
+          {post.title}
+        </h1>
+      </div>
+
       <div
         className={cx(
           container({
