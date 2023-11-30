@@ -10,6 +10,7 @@ const blogEndpoint = "blog";
 export type Blog = {
   id: string;
   title: string;
+  description: string;
   content: string;
   eyecatch?: MicroCMSImage;
 } & MicroCMSDate;
