@@ -1,8 +1,11 @@
 import { css } from "@/../styled-system/css";
 import { container, grid } from "@/../styled-system/patterns";
 import Card from "../components/ui/card";
+import { getAllBlogContents, type Blog } from "@/lib/microcms";
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getAllBlogContents();
+
   return (
     <div
       className={css({
@@ -42,32 +45,18 @@ export default function Home() {
             },
           })}
         >
-          <Card
-            src="/豊洲東雲_f3.png"
-            alt="サンプル画像"
-            title="前期お絵描き企画"
-            description="前期お絵描き企画で展示した作品です．"
-            href="https://github.com/saka-naname"
-          />
-          <Card
-            src="/豊洲東雲_f3.png"
-            alt="サンプル画像"
-            title="前期お絵描き企画"
-            description="前期お絵描き企画で展示した作品です．"
-            href="/"
-          />
-          <Card
-            src="/豊洲東雲_f3.png"
-            alt="サンプル画像"
-            title="前期お絵描き企画"
-            description="前期お絵描き企画で展示した作品です．"
-          />
-          <Card
-            src="/豊洲東雲_f3.png"
-            alt="サンプル画像"
-            title="前期お絵描き企画"
-            description="前期お絵描き企画で展示した作品です．"
-          />
+          {posts.map((post: Blog, index) => {
+            return (
+              <Card
+                key={index}
+                src={post.eyecatch?.url}
+                alt={post.title}
+                title={post.title}
+                description={post.description}
+                href={`/blog/${post.id}`}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
