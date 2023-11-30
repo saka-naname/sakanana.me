@@ -120,7 +120,7 @@ export default async function StaticBlogPage({
             textAlign: "center",
             fontSize: {
               base: "4xl",
-              lgDown: "2xl",
+              mdDown: "2xl",
             },
             fontWeight: "bold",
             color: "colorPalette.title",
@@ -166,7 +166,7 @@ export default async function StaticBlogPage({
             colorPalette: "content",
             bgColor: "colorPalette.bg",
             color: "colorPalette.text",
-            rounded: "md",
+            rounded: { base: "md", mdDown: "unset" },
             py: "8",
           }),
         )}
