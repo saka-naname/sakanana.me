@@ -65,7 +65,12 @@ export default defineConfig({
               value: "#FFFFFF",
             },
             text: {
-              value: "#595246",
+              DEFAULT: {
+                value: "#595246",
+              },
+              secondary: {
+                value: "#99948E",
+              },
             },
             separator: {
               value: "#cdcbc7",

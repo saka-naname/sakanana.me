@@ -6,7 +6,7 @@ import parse, {
   domToReact,
 } from "html-react-parser";
 import { notFound } from "next/navigation";
-import { container } from "@/../styled-system/patterns";
+import { container, hstack, vstack } from "@/../styled-system/patterns";
 import { css, cx } from "@/../styled-system/css";
 import { article, availableTagNames } from "@/app/components/recipes/article";
 import Link from "next/link";
@@ -77,10 +77,43 @@ export default async function StaticBlogPage({
   return (
     <div
       className={css({
-        py: "6",
+        py: 6,
       })}
     >
-      <div className={container({ mb: 4 })}>
+      <div
+        className={cx(
+          container({
+            mt: 4,
+            mb: 10,
+          }),
+          vstack({ gap: 4 }),
+        )}
+      >
+        {post.eyecatch ? (
+          <div
+            className={css({
+              bgColor: "#FFFFFF",
+              p: {
+                base: 4,
+                mdDown: 2,
+              },
+              maxW: "2xl",
+            })}
+          >
+            <Image
+              src={post.eyecatch.url}
+              alt="アイキャッチ画像"
+              width={post.eyecatch.width}
+              height={post.eyecatch.height}
+              loading="eager"
+              className={css({
+                objectFit: "cover",
+              })}
+            ></Image>
+          </div>
+        ) : (
+          <></>
+        )}
         <h1
           className={css({
             colorPalette: "body",
@@ -95,6 +128,35 @@ export default async function StaticBlogPage({
         >
           {post.title}
         </h1>
+        <div
+          className={hstack({
+            display: "flex",
+            justifyContent: "center",
+            gap: 4,
+            colorPalette: "content",
+            color: "colorPalette.text.secondary",
+          })}
+        >
+          <p>
+            公開:
+            {new Date(post.publishedAt || post.createdAt).toLocaleDateString(
+              "ja-JP",
+              {
+                timeZone: "Asia/Tokyo",
+              },
+            )}
+          </p>
+          {post.updatedAt !== (post.publishedAt || post.createdAt) ? (
+            <p>
+              更新:
+              {new Date(post.updatedAt).toLocaleDateString("ja-JP", {
+                timeZone: "Asia/Tokyo",
+              })}
+            </p>
+          ) : (
+            <></>
+          )}
+        </div>
       </div>
 
       <div
