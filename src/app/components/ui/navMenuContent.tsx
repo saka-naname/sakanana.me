@@ -51,7 +51,11 @@ export default function NavMenuContent(props: { visible: boolean }) {
       >
         <div className={vstack({ gap: "0" })}>
           <Link href="#" className={menuLink}>
-            Works
+            <span
+              className={css({ textDecoration: "line-through 2px double" })}
+            >
+              Works
+            </span>
           </Link>
           <Link href="/blog" className={menuLink}>
             Blog

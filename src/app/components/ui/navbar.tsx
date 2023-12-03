@@ -35,7 +35,11 @@ export default function NavBar() {
           </Link>
           <div className={hstack({ columnGap: "8", hideBelow: "md" })}>
             <Link href="#" className={navLink}>
-              Works
+              <span
+                className={css({ textDecoration: "line-through 2px double" })}
+              >
+                Works
+              </span>
             </Link>
             <Link href="/blog" className={navLink}>
               Blog
