@@ -4,9 +4,11 @@ import Link from "next/link";
 
 const menuBg = cva({
   base: {
+    colorPalette: "navMenu",
     position: "fixed",
     w: "screen",
-    bgColor: "#FFF8EE",
+    zIndex: "65534",
+    bgColor: "colorPalette.bg",
     display: "none",
     pt: "56px",
     top: "0",
@@ -27,7 +29,8 @@ const menuBg = cva({
 });
 
 const menuLink = css({
-  color: "#595246",
+  colorPalette: "navMenu",
+  color: "colorPalette.text",
   opacity: {
     base: "1",
     _hover: "0.8",
@@ -48,9 +51,13 @@ export default function NavMenuContent(props: { visible: boolean }) {
       >
         <div className={vstack({ gap: "0" })}>
           <Link href="#" className={menuLink}>
-            Works
+            <span
+              className={css({ textDecoration: "line-through 2px double" })}
+            >
+              Works
+            </span>
           </Link>
-          <Link href="#" className={menuLink}>
+          <Link href="/blog" className={menuLink}>
             Blog
           </Link>
         </div>

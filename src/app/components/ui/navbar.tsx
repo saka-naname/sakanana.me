@@ -4,9 +4,10 @@ import { flex, hstack, container } from "@/../styled-system/patterns";
 import NavButton from "./navButton";
 
 const navLink = css({
+  colorPalette: "navBar",
   color: {
-    base: "#FFFFFF",
-    _hover: "#F2E8C9",
+    base: "colorPalette.text",
+    _hover: "colorPalette.text.hover",
   },
   transition: "color 0.15s",
   p: "2",
@@ -16,12 +17,13 @@ export default function NavBar() {
   return (
     <div
       className={css({
+        colorPalette: "navBar",
         position: "fixed",
         top: "0",
         left: "0",
         zIndex: "65535",
         width: "full",
-        bgColor: "#595246",
+        bgColor: "colorPalette.bg",
         p: "2",
         fontWeight: "bold",
       })}
@@ -33,16 +35,21 @@ export default function NavBar() {
           </Link>
           <div className={hstack({ columnGap: "8", hideBelow: "md" })}>
             <Link href="#" className={navLink}>
-              Works
+              <span
+                className={css({ textDecoration: "line-through 2px double" })}
+              >
+                Works
+              </span>
             </Link>
-            <Link href="#" className={navLink}>
+            <Link href="/blog" className={navLink}>
               Blog
             </Link>
           </div>
           <div
             className={css({
+              colorPalette: "navBar",
               hideFrom: "md",
-              color: "#ffffff",
+              color: "colorPalette.text",
             })}
           >
             <NavButton />

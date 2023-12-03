@@ -5,6 +5,7 @@ export const overlay = cva({
     position: "fixed",
     w: "screen",
     h: "screen",
+    zIndex: "65534",
     bgColor: "#00000040",
     display: "none",
     opacity: "0",

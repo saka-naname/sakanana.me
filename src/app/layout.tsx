@@ -16,9 +16,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" className={`${NotoSansJP.variable}`}>
-      <body className={css({ fontFamily: "noto" })}>
+      <body
+        className={css({
+          colorPalette: "body",
+          fontFamily: "noto",
+          bgColor: "colorPalette.bg",
+        })}
+      >
         <Nav />
-        {children}
+        <div className={css({ mt: "56px" })}>{children}</div>
       </body>
     </html>
   );
