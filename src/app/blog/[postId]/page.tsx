@@ -11,6 +11,7 @@ import { css, cx } from "@/../styled-system/css";
 import { article, availableTagNames } from "@/app/components/recipes/article";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
 
 export const dynamicParams = false;
 
@@ -50,6 +51,18 @@ const parser: HTMLReactParserOptions = {
     }
   },
 };
+
+export async function generateMetadata({
+  params: { postId },
+}: {
+  params: { postId: string };
+}): Promise<Metadata> {
+  const post = await getBlogDetail(postId);
+
+  return {
+    title: `${post.title} - sakanana.me`,
+  };
+}
 
 export async function generateStaticParams() {
   const ids = await getAllBlogIds();

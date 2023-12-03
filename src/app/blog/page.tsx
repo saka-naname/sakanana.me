@@ -2,6 +2,11 @@ import { css } from "@/../styled-system/css";
 import { container, grid } from "@/../styled-system/patterns";
 import Card from "../components/ui/card";
 import { getAllBlogContents, type Blog } from "@/lib/microcms";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog - sakanana.me",
+};
 
 export default async function Home() {
   const posts = await getAllBlogContents();
