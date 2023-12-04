@@ -17,8 +17,16 @@ export const article = sva({
   slots: availableTagNames,
   base: {
     h1: {
+      colorPalette: "content",
+      color: "colorPalette.text",
       fontSize: "3xl",
       fontWeight: "700",
+      "&:not(:first-child)": {
+        mt: 8,
+      },
+      mb: 4,
+      borderBottom: "1px solid",
+      borderColor: "colorPalette.separator",
     },
     h2: {
       colorPalette: "content",
