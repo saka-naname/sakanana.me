@@ -4,6 +4,8 @@ import "./globals.css";
 import { css } from "../../styled-system/css";
 import Nav from "./components/ui/nav";
 
+export const revalidate = 1800;
+
 export const metadata: Metadata = {
   title: "sakanana.me",
   description: "A portfolio site of saka-naname",
