@@ -14,6 +14,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 
 export const dynamicParams = false;
+export const revalidate = 900;
 
 const classes = article();
 

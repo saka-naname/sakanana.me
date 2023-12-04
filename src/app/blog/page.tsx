@@ -4,6 +4,8 @@ import Card from "../components/ui/card";
 import { getAllBlogContents, type Blog } from "@/lib/microcms";
 import { Metadata } from "next";
 
+export const revalidate = 900;
+
 export const metadata: Metadata = {
   title: "Blog - sakanana.me",
 };
