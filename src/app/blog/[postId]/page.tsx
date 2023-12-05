@@ -62,6 +62,7 @@ export async function generateMetadata({
 
   return {
     title: `${post.title} - sakanana.me`,
+    metadataBase: new URL("https://sakanana.me"),
   };
 }
 

@@ -1,6 +1,7 @@
 import { getBlogDetail } from "@/lib/microcms";
 import { loadGoogleFont } from "@/lib/font";
 import { ImageResponse } from "next/og";
+import backgroundImage from "@/../public/ogpbg.png";
 
 export const runtime = "edge";
 export const revaliate = 60;
@@ -18,28 +19,33 @@ export default async function og({
   params: { postId: string };
 }) {
   try {
+    const post = await getBlogDetail(postId);
+
     const yomogiArrayBuffer = await loadGoogleFont({
       family: "Yomogi",
       weight: 400,
+      text: post.title + "aekmns.",
     });
 
-    const post = await getBlogDetail(postId);
+    const backgroundImageUrl = new URL(
+      backgroundImage.src,
+      "https://sakanana.me",
+    );
 
     return new ImageResponse(
       (
         <div
           style={{
-            backgroundImage: "url(/ogpbg.png)",
+            backgroundImage: `url(${backgroundImageUrl.toString()})`,
             backgroundColor: "#000000",
             backgroundSize: "100% 100%",
             height: "100%",
             width: "100%",
             display: "flex",
-            textAlign: "center",
-            alignItems: "flex-start",
+            alignContent: "center",
             justifyContent: "center",
             flexDirection: "column",
-            flexWrap: "nowrap",
+            gap: 60,
           }}
         >
           <div
@@ -47,11 +53,22 @@ export default async function og({
               width: "100%",
               fontSize: 60,
               color: "#ffffff",
-              padding: "0 120px",
+              padding: "0 160px",
               wordWrap: "break-word",
             }}
           >
             {post.title}
+          </div>
+          <div
+            style={{
+              width: "100%",
+              fontSize: 40,
+              color: "#ffffff",
+              padding: "0 160px",
+              wordWrap: "break-word",
+            }}
+          >
+            sakanana.me
           </div>
         </div>
       ),
