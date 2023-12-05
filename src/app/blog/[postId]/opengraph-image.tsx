@@ -1,7 +1,6 @@
 import { getBlogDetail } from "@/lib/microcms";
 import { loadGoogleFont } from "@/lib/font";
 import { ImageResponse } from "next/og";
-import backgroundImage from "@/../public/ogpbg.png";
 
 export const runtime = "edge";
 export const revaliate = 60;
@@ -27,10 +26,7 @@ export default async function og({
       text: post.title + "aekmns.",
     });
 
-    const backgroundImageUrl = new URL(
-      backgroundImage.src,
-      "https://sakanana.me",
-    );
+    const backgroundImageUrl = new URL("ogpbg.png", "https://sakanana.me");
 
     return new ImageResponse(
       (
