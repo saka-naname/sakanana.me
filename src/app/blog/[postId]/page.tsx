@@ -41,6 +41,7 @@ const parser: HTMLReactParserOptions = {
             alt={domNode.attribs.alt}
             width={parseInt(domNode.attribs.width)}
             height={parseInt(domNode.attribs.height)}
+            className={css({ m: "auto" })}
           />
         );
       }
